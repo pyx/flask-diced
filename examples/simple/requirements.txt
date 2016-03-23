@@ -1,0 +1,3 @@
+Flask-Diced
+Flask-SQLAlchemy
+Flask-WTF

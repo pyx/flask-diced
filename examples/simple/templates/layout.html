@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Flask-Diced Example{% endblock %}</title>
+    <style>
+      dl, form, h1, p, table { width: 80%; margin: 1em auto; }
+      dt { font-weight: bold; }
+      label, input { font-size: 1.5em; width: 100%; }
+      p.error-message { color: red; }
+      div.flash-message
+        { margin: 0; position: fixed; top: 0; left: 0; text-align: center; background-color: pink; width: 100%; }
+      table { border: 1px solid gray; }
+      thead { background-color: lightgray; }
+    </style>
+  </head>
+  <body>
+    {% block content %}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="flash-message">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% endblock content %}
+  </body>
+</html>

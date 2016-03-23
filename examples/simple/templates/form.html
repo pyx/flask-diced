@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{{ super() }}
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  <p>{{ form.username.label }}</p>
+  {% for error in form.username.errors %}
+  <p class="error-message">{{ error }}</p>
+  {% endfor %}
+  <p>{{ form.username }}</p>
+  <p>{{ form.email.label }}</p>
+  {% for error in form.email.errors %}
+  <p class="error-message">{{ error }}</p>
+  {% endfor %}
+  <p>{{ form.email }}</p>
+  <p>{{ form.submit }}</p>
+</form>
+{% endblock content %}

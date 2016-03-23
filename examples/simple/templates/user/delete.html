@@ -1,0 +1,13 @@
+{% extends 'form.html' %}
+
+{% block title %}{{ super() }}: Delete View{% endblock %}
+
+{% block content %}
+<h1>Delete User</h1>
+<p><a href="{{ url_for('index') }}">cancel and return to user list</a></p>
+<p class="error-message">Delete this user?</p>
+<form method="POST" action="">
+  {{ form.hidden_tag() }}
+  {{ form.submit }}
+</form>
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ super() }}: Detail View{% endblock %}
+
+{% block content %}
+<h1>User Detail</h1>
+<p><a href="{{ url_for('index') }}">return to user list</a></p>
+<dl>
+  <dt>Username</dt>
+  <dd>{{ user.username }}</dd>
+  <dt>Email</dt>
+  <dd><a href="mailto:{{ user.email }}">{{ user.email }}</a></dd>
+</dl>
+{% endblock content %}

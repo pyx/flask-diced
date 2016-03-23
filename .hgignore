@@ -21,6 +21,7 @@ tags
 *.patch
 *.diff
 .deps
+.eggs
 *.egg-info
 build
 _build

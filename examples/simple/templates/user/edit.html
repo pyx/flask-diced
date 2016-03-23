@@ -1,0 +1,9 @@
+{% extends 'form.html' %}
+
+{% block title %}{{ super() }}: Edit View{% endblock %}
+
+{% block content %}
+<h1>Edit User</h1>
+<p><a href="{{ url_for('index') }}">cancel and return to user list</a></p>
+{{ super() }}
+{% endblock content %}
