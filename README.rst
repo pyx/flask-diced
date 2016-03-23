@@ -51,11 +51,11 @@ e.g.,
 
 *Want to change how the objects list is fetched?*
 
-  Override :meth:`~flask_diced.Base.query_all`
+  Override :code:`query_all`
 
 *Want to change the name of endpoint of the edit view?*
 
-  Redefine :attr:`~flask_diced.Edit.edit_endpoint`
+  Redefine :code:`edit_endpoint`
 
 *Want to use your own view function or control how views are registered?*
 
