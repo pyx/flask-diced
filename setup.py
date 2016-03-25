@@ -31,7 +31,6 @@ setup(
     setup_requires=['pytest-runner'],
     tests_require=[
         'pytest>=2.8.2',
-        'pytest-coverage',
         'Flask-SQLAlchemy',
         'Flask-WTF',
     ],
