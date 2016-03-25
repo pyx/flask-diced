@@ -140,7 +140,9 @@ class Create(object):
     #: the message to be flashed for the next request when done
     create_flash_message = None
 
-    #: the form class for new object, with Flask-WFT compatible API
+    #: the form class for new object, with Flask-WFT compatible API,
+    #: this attribute is **mandatory** if create view is enabled unless the
+    #: default view :meth:`create_view` is overridden and does not use it
     create_form_class = None
 
     #: the name for variable representing the form in template
@@ -209,10 +211,12 @@ class Edit(object):
     #: the message to be flashed for the next request when done
     edit_flash_message = None
 
-    #: the form class for editing object, with Flask-WFT compatible API
+    #: the form class for editing object, with Flask-WFT compatible API,
+    #: this attribute is **mandatory** if edit view is enabled unless the
+    #: default view :meth:`edit_view` is overridden and does not use it
     edit_form_class = None
 
-    #: the name for variable representing the form in template
+    #: the name for variable representing the form in template.
     edit_form_name = 'form'
 
     #: the name of view to redirect the client to when done
@@ -282,6 +286,8 @@ class Delete(object):
     delete_flash_message = None
 
     #: the form class for deletion confirmation, should validate if confirmed
+    #: this attribute is **mandatory** if delete view is enabled unless the
+    #: default view :meth:`delete_view` is overridden and does not use it
     delete_form_class = None
 
     #: the name for variable representing the form in template
@@ -351,7 +357,7 @@ class Base(object):
     #: if they are also listed in :attr:`views`
     exclude_views = set()
 
-    #: the model class
+    #: the model class, this attribute is **mandatory**
     model = None
 
     @property
