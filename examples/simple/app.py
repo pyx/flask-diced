@@ -12,7 +12,7 @@ from flask.ext.diced import Diced, persistence_methods
 
 app = Flask(__name__)
 
-# Need this for WTForm CRSF protection
+# Need this for WTForm CSRF protection
 app.config['SECRET_KEY'] = 'no one knows'
 
 # Need this for SQLAlchemy
