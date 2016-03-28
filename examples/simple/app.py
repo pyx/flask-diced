@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
-from flask.ext.wtf import Form
+from flask_sqlalchemy import SQLAlchemy
+from flask_wtf import Form
 from wtforms import TextField, SubmitField
 from wtforms.fields.html5 import EmailField
 from wtforms.validators import DataRequired, Email, ValidationError
 
-from flask.ext.diced import Diced, persistence_methods
+from flask_diced import Diced, persistence_methods
 
 
 app = Flask(__name__)
