@@ -28,12 +28,13 @@ setup(
     install_requires=[
         'Flask>=0.10',
     ],
-    setup_requires=['pytest-runner'],
-    tests_require=[
-        'pytest>=2.8.2',
-        'Flask-SQLAlchemy',
-        'Flask-WTF',
-    ],
+    extras_require={
+        'test': [
+            'pytest>=2.8.2',
+            'Flask-SQLAlchemy',
+            'Flask-WTF',
+        ],
+    },
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',

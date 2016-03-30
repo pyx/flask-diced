@@ -26,7 +26,7 @@ install:
 	pip install --upgrade .
 
 dev-install:
-	pip install --upgrade -e .
+	pip install --upgrade -e .[test]
 
 docs: doc-html doc-pdf
 
@@ -48,7 +48,7 @@ release: quality tox
 	@echo "Done."
 
 test:
-	python setup.py test
+	py.test
 
 tox:
 	tox
