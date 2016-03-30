@@ -4,7 +4,7 @@
 from flask import flash, redirect, render_template, url_for
 
 
-__version__ = '0.2.dev0'
+__version__ = '0.2'
 
 __all__ = [
     'Detail', 'Index', 'Create', 'Edit', 'Delete',

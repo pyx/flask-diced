@@ -38,6 +38,12 @@ Changelog
 =========
 
 
+Version 0.2
+-----------
+
+- Removed test runner dependency in end user installation
+
+
 Version 0.1
 -----------
 
