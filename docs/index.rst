@@ -38,6 +38,12 @@ Changelog
 =========
 
 
+Version 0.3
+-----------
+
+- Added support to customized view context
+
+
 Version 0.2
 -----------
 
