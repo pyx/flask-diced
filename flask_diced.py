@@ -78,8 +78,21 @@ class Detail(object):
         :param pk:
             the primary key of the model to be shown.
         """
-        context = {self.object_name: self.query_object(pk)}
+        context = self.detail_view_context(
+            {self.object_name: self.query_object(pk)})
         return render_template(self.detail_template, **context)
+
+    def detail_view_context(self, context):
+        """detail view context
+
+        :param context:
+            the context that will be provided to detail view, can be modified
+            as needed.
+
+        :return:
+            the context to be used for detail view
+        """
+        return context
 
     def register_detail_view(self, blueprint):
         """register detail view to blueprint
@@ -114,8 +127,21 @@ class Index(object):
 
     def index_view(self):
         """index view function"""
-        context = {self.object_list_name: self.query_all()}
+        context = self.index_view_context(
+            {self.object_list_name: self.query_all()})
         return render_template(self.index_template, **context)
+
+    def index_view_context(self, context):
+        """index view context
+
+        :param context:
+            the context that will be provided to index view, can be modified
+            as needed.
+
+        :return:
+            the context to be used for index view
+        """
+        return context
 
     def register_index_view(self, blueprint):
         """register index view to blueprint
@@ -183,8 +209,20 @@ class Create(object):
             if message:
                 flash(message)
             return redirect(self.create_redirect_url)
-        context = {self.create_form_name: form}
+        context = self.create_view_context({self.create_form_name: form})
         return render_template(self.create_template, **context)
+
+    def create_view_context(self, context):
+        """create view context
+
+        :param context:
+            the context that will be provided to create view, can be modified
+            as needed.
+
+        :return:
+            the context to be used for create view
+        """
+        return context
 
     def register_create_view(self, blueprint):
         """register create view to blueprint
@@ -258,8 +296,20 @@ class Edit(object):
             if message:
                 flash(message)
             return redirect(self.edit_redirect_url)
-        context = {self.edit_form_name: form}
+        context = self.edit_view_context({self.edit_form_name: form})
         return render_template(self.edit_template, **context)
+
+    def edit_view_context(self, context):
+        """edit view context
+
+        :param context:
+            the context that will be provided to edit view, can be modified as
+            needed.
+
+        :return:
+            the context to be used for edit view
+        """
+        return context
 
     def register_edit_view(self, blueprint):
         """register edit view to blueprint
@@ -331,8 +381,20 @@ class Delete(object):
             if message:
                 flash(message)
             return redirect(self.delete_redirect_url)
-        context = {self.delete_form_name: form}
+        context = self.delete_view_context({self.delete_form_name: form})
         return render_template(self.delete_template, **context)
+
+    def delete_view_context(self, context):
+        """delete view context
+
+        :param context:
+            the context that will be provided to delete view, can be modified
+            as needed.
+
+        :return:
+            the context to be used for delete view
+        """
+        return context
 
     def register_delete_view(self, blueprint):
         """register delete view to blueprint
